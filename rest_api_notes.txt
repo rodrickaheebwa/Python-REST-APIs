@@ -1,0 +1,1 @@
+REST API services let you interact with the database by simply doing HTTP requests.
