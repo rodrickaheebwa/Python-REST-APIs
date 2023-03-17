@@ -1,0 +1,2 @@
+FLASK_APP=caleb_api.py
+FLASK_DEBUG=True

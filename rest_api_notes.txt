@@ -1,1 +1,24 @@
 REST API services let you interact with the database by simply doing HTTP requests.
+
+Data may be sent using JSON or XML.
+
+Flask:
+- Use Flask framework for the usual; to create routes.
+- We will need to use an ORM to interact with our database; for ease of use with python code.
+- Because SQLAlchemy (ORM) supports many relational databases, we will use SQLite in production, and can easily change to MySQL later.
+- So, here we have Flask framework to develop our app, and a SQLite database for our data, with SQLAlchemy as our ORM.
+- We know how both Flask and SQLite work.
+- Then connect the Flask app to the database using the app's config attribute.
+    - app.config['SQLALCHEMY_DATABASE_URI'] = 'path to sqlite db'
+- Then instantiate the database with SQLAlchemy.
+- Create database models (classes, tables) for your data.
+
+
+Flask-restful:
+- From this, import Resource and Api
+- Instantiate Api with our app; api = Api(app)
+- Create resources using the Resource class
+- Each resource is a class inheriting the Resource class, with http verbs as methods
+- Add created resources to the api instance using its add_resource method
+- Resources are added to routes/end points; api.add_resource(Todos, '/api/todos', '/api/todos/<int:todo_id>')
+- In the resources, we use marshmallow for serialisation.
